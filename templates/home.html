@@ -1,3 +1,26 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Machine Learning Product</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header>Donor Prediction</header>
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="number" name="AGE" placeholder="please inter the age" required="required"><br>
+        <input type="text" name="CITY" placeholder="please inter the city" required="required"><br>
+        <input type="text" name="EDUCATION_LEVEL" placeholder="please inter the education level" required="required"><br>
+        <input type="text" name="GENDER" placeholder="please inter the gender" required="required"><br>
+        <input type="text" name="MARITAL_STATUS" placeholder="please inter the martial status" required="required"><br>
+        <input type="text" name="OCCUPATION" placeholder="please inter the OCCUPATION" required="required"><br>
+        <button type="submit" classname="btm">Predict</button>
+    </form>
+
+    {{prediction_text}}
+</body>
+
+</html>

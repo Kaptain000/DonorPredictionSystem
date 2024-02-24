@@ -19,19 +19,17 @@ def home():
 def predict_api():
     data=request.json['data']
     category_features = ['CITY', 'EDUCATION_LEVEL', 'GENDER', 'MARITAL_STATUS', 'OCCUPATION']
-    print(data)
-    print(np.array(list(data.values())).reshape(1,-1))
-    # new_data = oneHotEncoder.transform(np.array(list(data[category_features].values())).reshape(1,-1))
-    feature_arr = oneHotEncoder.transform(list(data[category_features].values())).toarray().reshape(1,-1)
+    testdata = pd.DataFrame([data])
+    feature_arr = oneHotEncoder.transform(testdata[category_features]).toarray()
     feature_labels = oneHotEncoder.categories_
     feature_labels = np.concatenate(feature_labels)
     encoded_df = pd.DataFrame(feature_arr, columns=feature_labels)
-    testdata = pd.concat([data, encoded_df], axis=1)
+    testdata = pd.concat([testdata, encoded_df], axis=1)
     testdata.drop(category_features, axis=1, inplace=True)
     testdata['AGE'] = standardScaler.transform(testdata[['AGE']])
     output = smote_model.predict(testdata)
-    print(output[0])
-    return jsonify(output[0])
+    output_serializable = int(output[0])
+    return jsonify(output_serializable)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

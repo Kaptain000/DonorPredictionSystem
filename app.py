@@ -39,9 +39,9 @@ def predict_api():
 def predict():
     form_values = request.form.values()
     testdata = pd.DataFrame([list(form_values)], columns=request.form.keys())
-    print("************************")
-    print(testdata)
-    print("************************")
+    # print("************************")
+    # print(testdata)
+    # print("************************")
     category_features = ['CITY', 'EDUCATION_LEVEL', 'GENDER', 'MARITAL_STATUS', 'OCCUPATION']
     # transform json data into dataframe
 

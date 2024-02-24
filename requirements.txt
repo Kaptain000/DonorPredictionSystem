@@ -1,4 +1,3 @@
-python_version==3.7
 Flask
 scikit-learn
 pandas

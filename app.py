@@ -7,9 +7,9 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the model
-smote_model=pickle.load(open('smote_rf', 'rb'))
-oneHotEncoder = pickle.load(open('oneHotEncoder', 'rb'))
-standardScaler=pickle.load(open('StandardScaler', 'rb'))
+smote_model=pickle.load(open('smote_rf.pkl', 'rb'))
+oneHotEncoder = pickle.load(open('oneHotEncoder.pkl', 'rb'))
+standardScaler=pickle.load(open('StandardScaler.pkl', 'rb'))
 
 @app.route('/')
 def home():

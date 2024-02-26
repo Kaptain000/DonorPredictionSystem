@@ -12,7 +12,7 @@ body {
 }
 
 header{
-    font-size: calc(min(14px + 2vw, 48px));
+    font-size: calc(min(13px + 2vw, 48px));
 
     /* font-size: 28px; */
     font-weight: 600;

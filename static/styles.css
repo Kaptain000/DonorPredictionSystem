@@ -9,6 +9,7 @@ body {
     /* 调整背景图片大小以填充整个屏幕 */
     background-size: cover; 
     background-repeat: no-repeat; /* 禁止背景图片重复 */
+    /* background-position: center; */
 }
 
 header{
@@ -64,8 +65,13 @@ h1 {
 
 @media(max-width:600px){
 
+    header{
+        margin-top: -50px;
+    }
+
     .inputForm{
         width: 90%;
+        margin-top: 80px;
     }
 
     .inputForm button{
@@ -73,4 +79,10 @@ h1 {
         font-weight: 500;
     }
 
+    body {
+        height: 90vh;
+        background-size: cover; 
+        background-repeat: no-repeat; /* 禁止背景图片重复 */
+        background-position: center;
+    }
 }

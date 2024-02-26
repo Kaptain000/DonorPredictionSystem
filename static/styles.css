@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins";
     /* background-color: red; */
     display: flex;
     flex-direction: column;
@@ -8,28 +8,44 @@ body {
 }
 
 header{
-    font-size: 30px;
+    font-size: calc(min(12px + 2vw, 28px));
+
+    /* font-size: 28px; */
     font-weight: 600;
-    margin: 30px 0px;
+    margin-top: 50px;
 }
 
-form{
+.inputForm{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #bababa;
+    border-radius: 15px;
+    flex-direction: column;
+    margin: 30px 0px;
+    /* background: green; */
+}
+
+.inputForm form{
+    /* background: red; */
+    margin: 10px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     /* background-color: red; */
-    width: 100%;
+    width: 90%;
 }
 
-form input{
-    width: 500px;
-    height: 40px;
+.inputForm form input{
+    width: 100%;
+    height: calc(min(20px + 2vw, 40px));;
     padding-left: 10px;
     margin: 3px 0px;
 }
 
-button{
-    width: 515px;
+.inputForm button{
+    width: 105%;
     height: 50px;
     font-size: 25px;
     font-weight: 500;
@@ -38,4 +54,17 @@ button{
 
 h1 {
     color: blue;
+}
+
+@media(max-width:600px){
+
+    .inputForm{
+        width: 90%;
+    }
+
+    .inputForm button{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
 }

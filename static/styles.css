@@ -13,7 +13,7 @@ body {
 }
 
 header{
-    font-size: calc(min(13px + 2vw, 48px));
+    font-size: calc(min(13px + 1.8vw, 48px));
 
     /* font-size: 28px; */
     font-weight: 600;
@@ -84,5 +84,11 @@ h1 {
         background-size: cover; 
         background-repeat: no-repeat; /* 禁止背景图片重复 */
         background-position: center;
+    }
+}
+
+@media(max-width:400px){
+    header{
+        font-size: calc(min(12px + 1.8vw, 48px));
     }
 }

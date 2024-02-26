@@ -15,6 +15,7 @@ standardScaler=pickle.load(open('StandardScaler.pkl', 'rb'))
 # @app.route('/')：这个装饰器定义了根路径的处理函数 home()。当用户访问根路径时，将渲染名为 home.html 的 HTML 模板，并将其发送给客户端。
 @app.route('/')
 def home():
+    # Flask 应用程序默认会在 templates 文件夹中查找模板文件，因此您不需要在调用 render_template 函数时提供完整的路径
     return render_template('home.html')
 
 @app.route('/styles.css')

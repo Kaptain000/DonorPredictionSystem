@@ -59,8 +59,9 @@ header{
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-h1 {
-    color: blue;
+.output{
+    font-size: calc(min(15px + 1.8vw, 32px));
+    font-weight: 600;
 }
 
 @media(max-width:600px){

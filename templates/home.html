@@ -14,6 +14,7 @@
 <body>
     <header>Welcome to Donor Prediction System</header>
     <div class="inputForm">
+        <!-- action="{{ url_for('predict') }}" 定义了表单提交的目标 URL 地址。 -->
         <form action="{{ url_for('predict') }}" method="post">
             <input type="number" name="AGE" placeholder="please enter the age" required="required">
             <input type="text" name="CITY" placeholder="please enter the city" required="required">
@@ -22,7 +23,7 @@
             <input type="text" name="GENDER" placeholder="please enter the gender" required="required">
             <input type="text" name="MARITAL_STATUS" placeholder="please enter the martial status" required="required">
             <input type="text" name="OCCUPATION" placeholder="please enter the OCCUPATION" required="required">
-            <button type="submit" classname="btm">Predict</button>
+            <button type="submit" class="btm">Predict</button>
         </form>
     </div>
     <div class="output">

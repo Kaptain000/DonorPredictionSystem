@@ -1,0 +1,201 @@
+AGE,CITY,EDUCATION_LEVEL,GENDER,MARITAL_STATUS,OCCUPATION,CLASS
+25.0,New York,Postgraduate degree,M,Single,Sales and Related Occupations,1
+63.0,New York,Bachelor's degree,F,Married,Chief Executive Officer,0
+45.0,Los Angeles,High school,M,Others,Unemployed,1
+62.0,New York,Bachelor of Arts,F,Married,Chief Executive Officer,0
+26.0,New York,Associate's degree,M,Married,Construction and Extraction Occupations,1
+54.0,New York,Bachelor's degree,F,Married,Management Occupations,0
+23.0,Los Angeles,Some college,M,Single,Student,1
+54.0,Los Angeles,Bachelor's degree,F,Married,Transportation and Material Moving Occupations,1
+50.0,Los Angeles,No formal education,F,Others,Computer and Mathematical Occupations,1
+58.0,New York,Associate's degree,M,Married,Unemployed,1
+62.0,New York,Others,F,Married,President & CEO,0
+45.0,New York,Others,F,Married,Executive Director,0
+68.0,New York,Bachelor of Arts,F,Others,CEO and President,0
+25.0,Los Angeles,Bachelor of Arts,M,Single,Others,1
+87.0,New York,Postgraduate degree,M,Others,Chief Operating Officer,1
+65.0,New York,Others,M,Others,President,0
+63.0,New York,Bachelor's degree,M,Married,President,0
+44.0,Los Angeles,Postgraduate degree,F,Single,Retired,1
+51.0,Los Angeles,Others,M,Married,Others,0
+46.0,New York,Bachelor of Arts,F,Married,"Founder, President and CEO",0
+56.0,Los Angeles,Some college,F,Married,Others,1
+55.0,New York,"Bachelor's degree, Journalism",M,Married,CEO and President,0
+25.0,Los Angeles,Associate's degree,M,Single,Production Occupations,1
+45.0,New York,Middle school,M,Married,Management Occupations,1
+58.0,New York,"Bachelor's degree, Journalism",M,Others,Director | Business,0
+56.0,New York,Bachelor of Arts,F,Married,Executive Director,0
+51.0,Los Angeles,Others,F,Others,President,0
+62.0,New York,Others,F,Married,CEO,0
+62.0,Los Angeles,Postgraduate degree,M,Married,Office and Administrative Support Occupations,1
+56.0,New York,Bachelor's degree,M,Others,Executive Director,0
+25.0,Los Angeles,Bachelor of Arts,M,Married,Chief Executive Officer,0
+23.0,Los Angeles,Some college,F,Single,Management Occupations,1
+65.0,New York,Bachelor's degree,M,Single,Founder and Executive Directo,1
+67.0,Los Angeles,Middle school,F,Married,Protective Service Occupations,1
+25.0,Los Angeles,Others,M,Single,Protective Service Occupations,1
+62.0,New York,Middle school,M,Single,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+62.0,Los Angeles,Others,F,Married,Chief Operating Officer,0
+69.0,New York,Bachelor's degree,M,Single,Retired,1
+65.0,New York,Bachelor's degree,F,Married,Chief Financial Officer,0
+36.0,Los Angeles,Some college,M,Others,Others,1
+20.0,New York,Middle school,M,Single,Unemployed,1
+65.0,New York,Bachelor's degree,M,Married,President & CEO,0
+46.0,Los Angeles,Others,F,Married,Executive Director,0
+52.0,Los Angeles,Others,M,Married,Office Manager,0
+56.0,New York,Others,M,Married,Management Occupations,0
+78.0,Los Angeles,Elementary school,F,Married,Management Occupations,1
+31.0,Los Angeles,High school,F,Single,Management Occupations,1
+62.0,New York,Bachelor of Arts,M,Married,Retired,0
+46.0,Los Angeles,Bachelor's degree,M,Single,Business and Financial Operations,1
+54.0,Los Angeles,No formal education,F,Single,Retired,1
+63.0,Los Angeles,Postgraduate degree,M,Single,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+46.0,Los Angeles,Middle school,M,Others,"Chief Development Officer,",1
+76.0,New York,Others,F,Others,Owner/Partner,0
+62.0,Los Angeles,Postgraduate degree,M,Others,Business and Financial Operations,1
+36.0,Los Angeles,Others,M,Single,Management Occupations,1
+75.0,New York,Others,M,Others,President,0
+20.0,Los Angeles,Others,M,Married,"Arts, Design, Entertainment, Sports, and Media Occupations",0
+52.0,Los Angeles,Others,M,Others,President,0
+36.0,Los Angeles,Postgraduate degree,M,Married,Executive Director,1
+36.0,Los Angeles,Bachelor's degree,M,Married,founder,1
+35.0,New York,Bachelor's degree,M,Married,Management Occupations,1
+52.0,New York,Bachelor's degree,F,Married,Protective Service Occupations,0
+52.0,New York,Associate's degree,M,Married,Retired,1
+34.0,New York,Others,M,Single,Student,1
+61.0,New York,Bachelor's degree,M,Single,Management Occupations,1
+57.0,New York,Others,M,Married,"Chief Executive Officer,",0
+36.0,New York,High school,M,Married,Student,1
+46.0,Los Angeles,Associate's degree,M,Married,"Farming, Fishing, and Forestry Occupations",1
+46.0,Los Angeles,Bachelor of Arts,F,Married,Chief Executive Officer,0
+54.0,Los Angeles,Associate's degree,F,Married,Unemployed,1
+58.0,Los Angeles,Associate's degree,F,Married,Retired,1
+34.0,Los Angeles,Others,M,Single,Student,1
+56.0,Los Angeles,Bachelor's degree,F,Others,Executive Director,0
+36.0,New York,High school,M,Married,Unemployed,1
+95.0,New York,Others,F,Others,Management Occupations,0
+65.0,New York,Others,M,Married,Chief Executive Officer,0
+36.0,Los Angeles,Others,M,Married,President & CEO,0
+85.0,Los Angeles,Associate's degree,M,Single,Retired,1
+36.0,New York,Bachelor's degree,M,Married,Student,1
+36.0,New York,Some college,M,Single,Retired,1
+56.0,New York,"Bachelor's degree, Journalism",M,Married,Executive Director,0
+24.0,New York,Some college,F,Married,Director:Laboratory,1
+25.0,Los Angeles,Associate's degree,M,Married,Student,1
+62.0,Los Angeles,Associate's degree,M,Others,"Farming, Fishing, and Forestry Occupations",1
+56.0,Los Angeles,Middle school,M,Married,Others,1
+,New York,Others,M,Married,CEO and President,0
+56.0,New York,Bachelor's degree,M,Married,"Founder, President and CEO",0
+36.0,Los Angeles,High school,M,Married,Management Occupations,1
+22.0,New York,Associate's degree,F,Single,Others,1
+73.0,New York,Bachelor's degree,M,Others,President,0
+36.0,Los Angeles,Bachelor's degree,M,Single,Protective Service Occupations,1
+65.0,New York,Bachelor of Arts,M,Married,Chief Executive Officer,0
+63.0,New York,Others,M,Married,President,0
+23.0,Los Angeles,Bachelor's degree,F,Married,Unemployed,1
+25.0,Los Angeles,Others,M,Married,Chief Financial Officer,0
+67.0,Los Angeles,Some college,M,Single,Unemployed,1
+34.0,New York,Postgraduate degree,M,Married,Others,1
+48.0,New York,Some college,M,Others,Retired,1
+25.0,Los Angeles,Some college,M,Single,Student,1
+74.0,New York,Others,M,Married,Chief Executive Officer,0
+25.0,New York,Some college,M,Married,Management Occupations,1
+48.0,Los Angeles,Bachelor's degree,M,Single,Office and Administrative Support Occupations,1
+56.0,Los Angeles,Others,M,Married,Executive Director,0
+,New York,Bachelor's degree,F,Married,President & CEO,0
+67.0,New York,Associate's degree,F,Married,Office and Administrative Support Occupations,1
+52.0,Los Angeles,Associate's degree,F,Others,"Installation, Maintenance, and Repair Occupations",1
+54.0,New York,Bachelor of Arts,M,Married,President,0
+58.0,New York,Others,M,Married,Sales and Related Occupations,0
+36.0,New York,Bachelor's degree,M,Married,Protective Service Occupations,0
+63.0,New York,Associate's degree,M,Married,Unemployed,1
+36.0,Los Angeles,Others,F,Single,Healthcare Practitioners and Technical Occupations,1
+65.0,New York,Postgraduate degree,M,Single,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+65.0,Los Angeles,Middle school,F,Single,"Installation, Maintenance, and Repair Occupations",1
+36.0,Los Angeles,"Bachelor's degree, Journalism",M,Married,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+34.0,Los Angeles,Others,M,Married,Chief Operating Officer,0
+32.0,Los Angeles,Others,F,Married,President,0
+62.0,Los Angeles,High school,M,Single,Production Occupations,1
+56.0,Los Angeles,No formal education,M,Married,Chief Operating Officer,1
+63.0,New York,Some college,M,Married,Others,1
+78.0,New York,Others,F,Married,Management Occupations,0
+,Los Angeles,Bachelor's degree,F,Single,Student,1
+45.0,Los Angeles,Some college,F,Single,Protective Service Occupations,1
+57.0,New York,Others,M,Married,President,0
+18.0,New York,Postgraduate degree,M,Single,Student,1
+54.0,New York,Middle school,F,Single,Management Occupations,1
+54.0,New York,No formal education,M,Married,Chief Executive Officer,0
+69.0,New York,Associate's degree,F,Single,Sales and Related Occupations,1
+71.0,New York,Associate's degree,F,Others,Retired,1
+62.0,Los Angeles,Middle school,M,Single,Others,1
+25.0,New York,Associate's degree,M,Single,Student,1
+46.0,New York,Others,M,Married,Protective Service Occupations,0
+25.0,New York,Postgraduate degree,M,Single,Student,1
+54.0,New York,Others,F,Married,President & CEO,0
+57.0,New York,"Bachelor's degree, Journalism",M,Married,President & CEO,0
+58.0,Los Angeles,Postgraduate degree,M,Single,Others,1
+52.0,New York,Others,F,Married,CEO and President,0
+36.0,New York,Associate's degree,M,Others,Retired,1
+78.0,New York,Bachelor of Arts,M,Married,President & CEO,0
+36.0,New York,Some college,M,Single,Unemployed,1
+34.0,New York,Bachelor's degree,F,Single,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+56.0,Los Angeles,Elementary school,M,Married,Protective Service Occupations,1
+25.0,Los Angeles,Postgraduate degree,F,Married,Protective Service Occupations,1
+37.0,Los Angeles,Associate's degree,F,Single,Student,1
+34.0,New York,Middle school,F,Married,Student,1
+56.0,Los Angeles,Bachelor's degree,M,Others,Director at CALPIRG,1
+62.0,New York,Bachelor's degree,M,Others,Production Occupations,0
+36.0,Los Angeles,"Bachelor's degree, Journalism",F,Single,Chief Executive Officer,0
+87.0,New York,Bachelor of Arts,F,Married,Founder and CEO,0
+62.0,Los Angeles,High school,M,Married,Retired,1
+51.0,Los Angeles,Some college,M,Others,Production Occupations,1
+73.0,New York,Others,M,Married,President,0
+56.0,New York,Bachelor's degree,M,Married,Management Occupations,0
+56.0,Los Angeles,No formal education,M,Single,Others,1
+66.0,Los Angeles,High school,M,Single,Others,1
+61.0,New York,Bachelor's degree,M,Others,Protective Service Occupations,0
+56.0,New York,Postgraduate degree,F,Married,President,0
+63.0,Los Angeles,Middle school,M,Single,Retired,1
+42.0,New York,Associate's degree,M,Married,Office and Administrative Support Occupations,1
+36.0,New York,Bachelor of Arts,M,Others,President & CEO,0
+54.0,New York,Others,M,Married,President,0
+56.0,Los Angeles,Middle school,M,Married,Director of Contributors,1
+53.0,New York,Some college,F,Single,Management Occupations,1
+25.0,Los Angeles,Bachelor's degree,M,Married,President,0
+78.0,Los Angeles,Associate's degree,M,Married,Business and Financial Operations,1
+36.0,Los Angeles,Middle school,M,Others,Unemployed,1
+62.0,New York,Others,M,Others,President,0
+45.0,Los Angeles,Associate's degree,M,Married,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+51.0,Los Angeles,Some college,F,Married,Others,1
+23.0,New York,Associate's degree,F,Single,Management Occupations,1
+22.0,New York,Others,F,Married,Unemployed,1
+54.0,New York,Middle school,F,Married,Construction and Extraction Occupations,1
+34.0,Los Angeles,Associate's degree,F,Single,Sales and Related Occupations,1
+54.0,New York,Others,F,Married,Director,0
+31.0,New York,Postgraduate degree,F,Married,Management Occupations,1
+56.0,New York,Associate's degree,M,Single,Retired,1
+42.0,Los Angeles,Bachelor's degree,M,Single,Management Occupations,1
+36.0,New York,High school,M,Single,Unemployed,1
+58.0,New York,Bachelor of Arts,F,Others,Vice President,0
+,New York,Bachelor of Arts,M,Married,CEO,0
+53.0,New York,Bachelor of Arts,M,Married,Chief Executive Officer,0
+36.0,Los Angeles,Associate's degree,F,Married,Management Occupations,1
+45.0,New York,Others,M,Married,Chief Executive Officer,0
+36.0,Los Angeles,No formal education,M,Others,"Arts, Design, Entertainment, Sports, and Media Occupations",1
+87.0,New York,Others,M,Single,Retired,0
+58.0,New York,Postgraduate degree,M,Single,Management Occupations,1
+24.0,Los Angeles,Others,M,Others,Management Occupations,0
+67.0,Los Angeles,Associate's degree,M,Married,Management Occupations,1
+25.0,New York,Associate's degree,M,Single,"Farming, Fishing, and Forestry Occupations",1
+57.0,Los Angeles,Associate's degree,F,Single,Others,1
+65.0,New York,Bachelor's degree,M,Others,Chief Executive Officer,0
+82.0,New York,Others,M,Married,CEO,0
+67.0,Los Angeles,Associate's degree,M,Others,Transportation and Material Moving Occupations,1
+,Los Angeles,Postgraduate degree,M,Married,Unemployed,1
+85.0,Los Angeles,Bachelor's degree,M,Single,Management Occupations,1
+54.0,New York,Bachelor of Arts,F,Married,Office Manager,0
+61.0,New York,Others,F,Married,Executive Director,0
+54.0,Los Angeles,Bachelor of Arts,M,Single,"Chief Executive Officer,",0
+62.0,Los Angeles,Bachelor's degree,M,Single,Computer and Mathematical Occupations,1
+54.0,Los Angeles,Others,F,Married,Director | Business,0
+61.0,Los Angeles,Middle school,M,Married,Unemployed,1

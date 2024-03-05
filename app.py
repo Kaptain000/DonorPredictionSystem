@@ -1,6 +1,6 @@
 import json
 import pickle
-from flask import Flask, request, app, jsonify, url_for, render_template, send_from_directory
+from flask import Flask, request, app, jsonify, url_for, render_template, redirect, send_from_directory
 import numpy as np
 import pandas as pd
 
@@ -16,11 +16,20 @@ standardScaler=pickle.load(open('StandardScaler.pkl', 'rb'))
 
 
 # @app.route('/')：这个装饰器定义了当用户访问应用程序的根路径 '/' 时，Flask 将调用 home() 函数，并渲染名为 'home.html' 的模板文件
-@app.route('/')
+@app.route('/',  methods=['GET', 'POST'])
 def home():
     # Flask 应用程序默认会在 templates 文件夹中查找模板文件，因此您不需要在调用 render_template 函数时提供完整的路径
     # render_template('home.html') 是 Flask 中的一个函数，用于渲染模板文件 'home.html'，并将其作为 HTTP 响应返回给客户端
     return render_template('home.html')
+
+@app.route('/csv_predict')
+def csv_predict():
+    return render_template('csv_predict.html')
+
+@app.route('/form_predict')
+def form_predict():
+    return render_template('form_predict.html')
+
 
 @app.route('/styles.css')
 def styles():
@@ -54,8 +63,8 @@ def predict_api():
     return jsonify(output_serializable)
 
 # @app.route('/predict', methods=['POST'])：这个装饰器定义了 /predict 路由的处理函数 predict(), 最后，处理函数将预测结果渲染到一个 HTML 模板中，并将该模板发送给客户端。
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/form_predict_result', methods=['POST'])
+def form_predict_result():
     # 通过 request.form.values() 可以获取这些表单数据的值：
     form_values = request.form.values()
     testdata = pd.DataFrame([list(form_values)], columns=request.form.keys())
@@ -72,7 +81,35 @@ def predict():
     output = smote_model.predict(testdata)
     output_serializable = int(output[0])
     # render_template 函数被用于渲染名为 home.html 的模板文件，并将 prediction_text 变量传递给模板。
-    return render_template("home.html", prediction_text="This person is a potential donor") if output_serializable == 1 else render_template("home.html", prediction_text="This person is not a potential donor")
+    return render_template("form_predict.html", prediction_text="This person is a potential donor") if output_serializable == 1 else render_template("form_predict.html", prediction_text="This person is not a potential donor")
+
+@app.route('/csv_predict_result', methods=['POST'])
+def csv_predict_result():
+    # 通过 request.form.values() 可以获取这些表单数据的值：
+    if 'CSV File' not in request.files:
+            return 'No file part'
+    csv_file = request.files['CSV File']
+    testdata0 = pd.read_csv(csv_file)
+    testdata = testdata0.copy()
+    testdata['AGE'].fillna(testdata['AGE'].mean(), inplace=True)
+    category_features = ['CITY', 'EDUCATION_LEVEL', 'GENDER', 'MARITAL_STATUS', 'OCCUPATION']
+    feature_arr = oneHotEncoder.transform(testdata[category_features]).toarray()
+    feature_labels = oneHotEncoder.categories_
+    feature_labels = np.concatenate(feature_labels)
+    encoded_df = pd.DataFrame(feature_arr, columns=feature_labels)
+    testdata = pd.concat([testdata, encoded_df], axis=1)
+    testdata.drop(category_features, axis=1, inplace=True)
+
+    testdata['AGE'] = standardScaler.transform(testdata[['AGE']])
+
+    output = smote_model.predict(testdata)
+    output_df = pd.DataFrame(output, columns=['CLASS'])
+    combined_df = pd.concat([testdata0, output_df], axis=1)
+    combined_df.to_csv('predicted_data.csv', index=False)
+    prediction_str = str(output)
+
+    # render_template 函数被用于渲染名为 home.html 的模板文件，并将 prediction_text 变量传递给模板。
+    return render_template("csv_predict.html", prediction_text="The prediction result is {}".format(prediction_str))
 
 # if __name__ == "__main__":：这个条件语句检查脚本是否直接运行，而不是作为模块导入。如果脚本直接运行，那么调用 app.run() 启动 Flask 应用程序，并在调试模式下运行（debug=True）。
 # 在 Flask 应用程序中，通常不需要显式定义一个 main() 函数，因为 Flask 应用程序对象（即 app）会被创建并在需要的时候运行。

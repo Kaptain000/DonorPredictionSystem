@@ -96,6 +96,8 @@ def csv_predict_result():
             return 'No file part'
     csv_file = request.files['CSV File']
     filename = csv_file.filename
+    # rsplit('.', 1) 方法将文件名根据最后一个.进行分割成两部分，并保留第一部分（即去掉后缀的部分）
+    filename_without_extension = filename.rsplit('.', 1)[0]
     testdata0 = pd.read_csv(csv_file)
     testdata = testdata0.copy()
     testdata['AGE'].fillna(testdata['AGE'].mean(), inplace=True)
@@ -115,14 +117,14 @@ def csv_predict_result():
     combined_df.to_csv('predicted_data.csv', index=False)
 
     # 获取集合中最后一个文档的 ID
-    last_document = db[filename].find_one(sort=[("_id", pymongo.DESCENDING)])
+    last_document = db[filename_without_extension].find_one(sort=[("_id", pymongo.DESCENDING)])
     last_id = last_document["_id"] if last_document else 0
     
     # 将数据插入 MongoDB 并为每个文档分配递增的 ID
     data_dict = combined_df.to_dict(orient='records')
     for i, doc in enumerate(data_dict, start=1):
         doc["_id"] = last_id + i
-    collection = db[filename]  # 替换成你想要创建的集合名称
+    collection = db[filename_without_extension]  # 替换成你想要创建的集合名称
     collection.insert_many(data_dict)
     
     prediction_str = str(output)

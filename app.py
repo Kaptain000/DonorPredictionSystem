@@ -3,11 +3,17 @@ import pickle
 from flask import Flask, request, app, jsonify, url_for, render_template, redirect, send_from_directory
 import numpy as np
 import pandas as pd
+import pymongo
 
-
+# mongodb+srv://DonorPredictionApp:9WADs0jcTC4tYg41@donorpredictioncluster0.2rauyga.mongodb.net/
 # 使用 Flask 框架创建一个 Flask 应用程序对象
 # __name__ 是一个特殊变量，表示当前 Python 模块的名称
 app = Flask(__name__)
+
+
+client = pymongo.MongoClient("mongodb+srv://DonorPredictionApp:9WADs0jcTC4tYg41@donorpredictioncluster0.2rauyga.mongodb.net/")
+db = client['testSet']  # 替换成你的数据库名称
+
 
 # Load the model
 smote_model=pickle.load(open('smote_rf.pkl', 'rb'))
@@ -89,6 +95,7 @@ def csv_predict_result():
     if 'CSV File' not in request.files:
             return 'No file part'
     csv_file = request.files['CSV File']
+    filename = csv_file.filename
     testdata0 = pd.read_csv(csv_file)
     testdata = testdata0.copy()
     testdata['AGE'].fillna(testdata['AGE'].mean(), inplace=True)
@@ -106,10 +113,22 @@ def csv_predict_result():
     output_df = pd.DataFrame(output, columns=['CLASS'])
     combined_df = pd.concat([testdata0, output_df], axis=1)
     combined_df.to_csv('predicted_data.csv', index=False)
+
+    # 获取集合中最后一个文档的 ID
+    last_document = db[filename].find_one(sort=[("_id", pymongo.DESCENDING)])
+    last_id = last_document["_id"] if last_document else 0
+    
+    # 将数据插入 MongoDB 并为每个文档分配递增的 ID
+    data_dict = combined_df.to_dict(orient='records')
+    for i, doc in enumerate(data_dict, start=1):
+        doc["_id"] = last_id + i
+    collection = db[filename]  # 替换成你想要创建的集合名称
+    collection.insert_many(data_dict)
+    
     prediction_str = str(output)
 
     # render_template 函数被用于渲染名为 home.html 的模板文件，并将 prediction_text 变量传递给模板。
-    return render_template("csv_predict.html", prediction_text="The prediction result is {}".format(prediction_str))
+    return render_template("csv_predict.html", prediction_text="The prediction result is: \n {}".format(prediction_str))
 
 # if __name__ == "__main__":：这个条件语句检查脚本是否直接运行，而不是作为模块导入。如果脚本直接运行，那么调用 app.run() 启动 Flask 应用程序，并在调试模式下运行（debug=True）。
 # 在 Flask 应用程序中，通常不需要显式定义一个 main() 函数，因为 Flask 应用程序对象（即 app）会被创建并在需要的时候运行。

@@ -72,17 +72,14 @@ def single_prediction_result():
 
     output = smote_model.predict(testdata)
     output_serializable = int(output[0])
-    # render_template 函数被用于渲染名为 home.html 的模板文件，并将 prediction_text 变量传递给模板。
     return render_template("single_prediction.html", prediction_text="This person is a potential donor") if output_serializable == 1 else render_template("single_prediction.html", prediction_text="This person is not a potential donor")
 
 @app.route('/multiple_prediction_result', methods=['POST'])
 def multiple_prediction_result():
-    # 通过 request.form.values() 可以获取这些表单数据的值：
     if 'CSV File' not in request.files:
             return 'No file part'
     csv_file = request.files['CSV File']
     filename = csv_file.filename
-    # rsplit('.', 1) 方法将文件名根据最后一个.进行分割成两部分，并保留第一部分（即去掉后缀的部分）
     filename_without_extension = filename.rsplit('.', 1)[0]
     testdata0 = pd.read_csv(csv_file)
     testdata = testdata0.copy()
@@ -102,23 +99,19 @@ def multiple_prediction_result():
     combined_df = pd.concat([testdata0, output_df], axis=1)
     combined_df.to_csv('predicted_data.csv', index=False)
 
-    # 获取集合中最后一个文档的 ID
+
     last_document = db[filename_without_extension].find_one(sort=[("_id", pymongo.DESCENDING)])
     last_id = last_document["_id"] if last_document else 0
     
-    # 将数据插入 MongoDB 并为每个文档分配递增的 ID
     data_dict = combined_df.to_dict(orient='records')
     for i, doc in enumerate(data_dict, start=1):
         doc["_id"] = last_id + i
-    collection = db[filename_without_extension]  # 替换成你想要创建的集合名称
+    collection = db[filename_without_extension]
     collection.insert_many(data_dict)
     
     prediction_str = str(output)
 
-    # render_template 函数被用于渲染名为 home.html 的模板文件，并将 prediction_text 变量传递给模板。
     return render_template("multiple_prediction.html", prediction_text="The prediction result is: \n {}".format(prediction_str))
 
-# if __name__ == "__main__":：这个条件语句检查脚本是否直接运行，而不是作为模块导入。如果脚本直接运行，那么调用 app.run() 启动 Flask 应用程序，并在调试模式下运行（debug=True）。
-# 在 Flask 应用程序中，通常不需要显式定义一个 main() 函数，因为 Flask 应用程序对象（即 app）会被创建并在需要的时候运行。
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

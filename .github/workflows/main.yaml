@@ -12,13 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check-out your repository.
-      # uses: actions/checkout@v2 是一个预定义的 GitHub Action，用于检出代码仓库中的代码。
       - name: Checkout
         uses: actions/checkout@v2
 
 
 ### ⬇ IMPORTANT PART ⬇ ###
-      # 构建、推送和发布一个 Docker 容器到 Heroku 上
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
         with:

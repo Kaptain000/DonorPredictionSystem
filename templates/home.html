@@ -28,7 +28,7 @@
         </div>
 
         <div class="sidebar-item">
-            <button type="submit" onclick="fillForm()" class="btm">Fill form as input</button>
+            <button type="submit" onclick="fillForm()" class="btm">Single_prediction</button>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
         function fillForm() {
             // 执行填写表单的操作
             // 例如：导航到指定的 URL
-            window.location.href = "{{ url_for('form_predict') }}";
+            window.location.href = "{{ url_for('single_prediction') }}";
         }
     </script>
 </body>

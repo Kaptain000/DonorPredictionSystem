@@ -33,7 +33,7 @@
         </div>
     
         <div class="inputForm">
-            <form action="{{ url_for('form_predict_result') }}"  method="post">
+            <form action="{{ url_for('single_prediction_result') }}"  method="post">
                 <input type="number" name="AGE" min="0" placeholder="please enter the age" required="required">
                 <input type="text" name="CITY" placeholder="please enter the city" required="required">
                 <input type="text" name="EDUCATION_LEVEL" placeholder="please enter the education level"
@@ -55,13 +55,13 @@
         function useCSV() {
             // 执行使用 csv/exl 的操作
             // 例如：导航到指定的 URL
-            window.location.href = "{{ url_for('csv_predict') }}";
+            window.location.href = "{{ url_for('multiple_prediction') }}";
         }
     
         function fillForm() {
             // 执行填写表单的操作
             // 例如：导航到指定的 URL
-            window.location.href = "{{ url_for('form_predict') }}";
+            window.location.href = "{{ url_for('single_prediction') }}";
         }
     </script>
 

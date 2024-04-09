@@ -25,16 +25,16 @@
         <div class='sidebar'>
             <div class="sidebar-item">
                 <!-- <img src={add_product_icon} alt="" /> -->
-                <button type="submit" onclick="useCSV()" class="btm">Use csv/xlsx as input</button>
+                <button type="submit" onclick="useCSV()" class="btm">Multiple Prediction</button>
             </div>
     
             <div class="sidebar-item">
-                <button type="submit" onclick="fillForm()" class="btm">Fill form as input</button>
+                <button type="submit" onclick="fillForm()" class="btm">Single Prediction</button>
             </div>
         </div>
     
         <div class="inputForm">
-            <form action="{{ url_for('csv_predict_result') }}"  method="post" enctype="multipart/form-data">
+            <form action="{{ url_for('multiple_prediction_result') }}"  method="post" enctype="multipart/form-data">
                 <label for="fileInput">
                     <img src="../static/images/upload_area.svg" class='addproduct-thumnail-img' alt="" />
                 </label>
@@ -53,13 +53,13 @@
         function useCSV() {
             // 执行使用 csv/exl 的操作
             // 例如：导航到指定的 URL
-            window.location.href = "{{ url_for('csv_predict') }}";
+            window.location.href = "{{ url_for('multiple_prediction') }}";
         }
     
         function fillForm() {
             // 执行填写表单的操作
             // 例如：导航到指定的 URL
-            window.location.href = "{{ url_for('form_predict') }}";
+            window.location.href = "{{ url_for('single_prediction') }}";
         }
     </script>
 </body>
